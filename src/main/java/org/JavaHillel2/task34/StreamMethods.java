@@ -38,7 +38,7 @@ public class StreamMethods {
 
     public static List <Employee> peopleBetween33and37 (List<Employee> list){
         return list.stream()
-                .filter(p -> p.getAge()>33 && p.getAge()>37)
+                .filter(p -> p.getAge()>33 && p.getAge()<37)
                 .peek(p-> System.out.println(p))
                 .collect(Collectors.toList());
     }
@@ -51,7 +51,7 @@ public class StreamMethods {
         return quantity;
     }
 
-    public static List<Long> UnMarriedGuysSalaries (List<Employee> list) {
+    public static List<Long> guysOlder30Salaries (List<Employee> list) {
         return  list.stream()
                 .filter(p -> p.getGender().equals(Gender.male) && p.getAge()>30)
                 .map(p->p.getSalary())
