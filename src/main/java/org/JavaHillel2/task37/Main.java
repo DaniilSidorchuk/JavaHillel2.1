@@ -10,11 +10,7 @@ public class Main {
     public static void main(String[] args) {
         LinkedList <Employee> list = new LinkedList() ;
 
-        try {
-            list = (LinkedList<Employee>) FileEmployeeReader.getEmployeeListFromFile("E:\\SD\\JH2\\JavaHillel2.1\\src\\main\\resources\\input.csv");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        list = (LinkedList<Employee>) FileEmployeeReader.getEmployeeListFromFile("E:\\SD\\JH2\\JavaHillel2.1\\src\\main\\resources\\input.csv");
 
         list.stream()
                 .forEach(p -> System.out.println(p));

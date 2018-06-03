@@ -11,8 +11,13 @@ import java.util.Scanner;
 
 public class FileEmployeeReader {
 
-    public static Collection <Employee> getEmployeeListFromFile (String adr) throws FileNotFoundException {
-        FileReader fileReader = new FileReader(adr);
+    public static Collection <Employee> getEmployeeListFromFile (String adr)  {
+        FileReader fileReader = null;
+        try {
+            fileReader = new FileReader(adr);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         Scanner scanner = new Scanner(fileReader);
         LinkedList list = new LinkedList();
 

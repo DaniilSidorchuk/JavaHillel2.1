@@ -47,11 +47,19 @@ public class Employee {
                 '}';
     }
 
+    public String fileWriter (){
+        return  this.name + " " + this.salary + " " + this.age + " " + this.gender + " " + this.married;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == null || !(obj instanceof Employee)){
             return false;
         }
         return this.name.equals(((Employee) obj).name);
+    }
+
+    public void setSalary(long salary) {
+        this.salary = salary;
     }
 }
